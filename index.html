@@ -8,34 +8,50 @@
     <style>
 
 body {
-  height: 1000px; margin: 0; padding: 0; font-size: 5em; font-weight: bold; text-align: center; font-family: arial; background: #d1d6da; color: #19191c;
+  height: 1000px; margin: 0; padding: 0; font-size: 3em; font-weight: bold; text-align: center; font-family: arial; background: white; color: #19191c;
 }
 
 button {  
-  position: fixed; bottom: 50px; right: 50px; border: 0; outline: 0; background-color: #d1d6da; font-size: 20px;
+  position: fixed; bottom: 50px; right: 50px; border: 0; outline: 0; background-color: white; font-size: 20px; color: #E2264D; 
 } 
+
+.heart {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: url(https://cssanimation.rocks/images/posts/steps/heart.png)
+    no-repeat;
+  background-position: 0 0;
+  cursor: pointer;
+  animation: fave-heart 1s steps(28);
+}
+
+.heart:hover {
+  background-position: -2800px 0;
+  transition: background 1s steps(28);
+}
+
+@keyframes fave-heart {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: -2800px 0;
+  }
+}
+
 
     </style>
 </head>
 <body>
 
-<br>
-(っ˘▿˘)(˘▿˘)˘▿˘ς)<br>
-(っ˘▿˘)(˘▿˘)˘▿˘ς)<br>
-(っ˘▿˘)(˘▿˘)˘▿˘ς)<br>
-(っ˘▿˘)(˘▿˘)˘▿˘ς)<br>
-(っ˘▿˘)(˘▿˘)˘▿˘ς)<br>
-(っ˘▿˘)(˘▿˘)˘▿˘ς)<br><br>
+<div class="heart"></div>
 
-<svg height="0" width="0">
-  <defs>
-    <clipPath id="svgTextPath">
-      <text x="0" y="300" lengthAdjust="spacing" font-family="arial" font-size="20rem" font-weight="700" font-style="bold">ggg</text>
-    </clipPath>
-  </defs>
-</svg>
-
-<button id="top">☆</button>
+<button id="top">♡</button>
 
     <script>
     function scrollToTop() {
