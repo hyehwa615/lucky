@@ -1,0 +1,1966 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>sub 3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <style>
+    @import 'https://fonts.googleapis.com/css?family=Montserrat|Open+Sans';
+    @font-face {
+      font-family: 'Pretendard-Regular';
+      src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    body {
+      font-family: 'Pretendard-Regular';
+      background-image: url("back.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    div.container {
+      flex: 1;
+    }
+
+    footer {
+      font-family: 'Pretendard-Regular';
+      background-color: #86A189;
+      color: #ffffff;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .navbar-brand {
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+    }
+
+    .navbar .nav {
+      font-family: 'Open Sans', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 1.2rem;
+    }
+
+    .navbar-inverse {
+      background-color: #86A189;
+    }
+
+    .navbar-inverse .navbar-nav>.active>a:hover,
+    .navbar-inverse .navbar-nav>li>a:hover,
+    .navbar-inverse .navbar-nav>li>a:focus {
+      background-color: #738A75;
+    }
+
+    .navbar-inverse .navbar-nav>.active>a,
+    .navbar-inverse .navbar-nav>.open>a,
+    .navbar-inverse .navbar-nav>.open>a,
+    .navbar-inverse .navbar-nav>.open>a:hover,
+    .navbar-inverse .navbar-nav>.open>a,
+    .navbar-inverse .navbar-nav>.open>a:hover,
+    .navbar-inverse .navbar-nav>.open>a:focus {
+      background-color: #86A189;
+    }
+
+    .dropdown-menu {
+      background-color: #006B00;
+    }
+
+    .dropdown-menu>li>a:hover,
+    .dropdown-menu>li>a:focus {
+      background-color: #738A75;
+    }
+
+    .navbar-inverse {
+      background-image: none;
+    }
+
+    .dropdown-menu>li>a:hover,
+    .dropdown-menu>li>a:focus {
+      background-image: none;
+    }
+
+    .navbar-inverse {
+      border-color: #86A189;
+    }
+
+    .navbar-inverse .navbar-brand {
+      color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-brand:hover {
+      color: #FFCC00;
+    }
+
+    .navbar-inverse .navbar-nav>li>a {
+      color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-nav>li>a:hover,
+    .navbar-inverse .navbar-nav>li>a:focus {
+      color: #FFCC00;
+    }
+
+    .navbar-inverse .navbar-nav>.active>a,
+    .navbar-inverse .navbar-nav>.open>a,
+    .navbar-inverse .navbar-nav>.open>a:hover,
+    .navbar-inverse .navbar-nav>.open>a:focus {
+      color: #FFCC00;
+    }
+
+    .navbar-inverse .navbar-nav>.active>a:hover,
+    .navbar-inverse .navbar-nav>.active>a:focus {
+      color: #FFCC00;
+    }
+
+    .dropdown-menu>li>a {
+      color: #FFFFFF;
+    }
+
+    .dropdown-menu>li>a:hover,
+    .dropdown-menu>li>a:focus {
+      color: #FFCC00;
+    }
+
+    .navbar-inverse .navbar-nav>.dropdown>a .caret {
+      border-top-color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
+      border-top-color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-nav>.dropdown>a .caret {
+      border-bottom-color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
+      border-bottom-color: #FFFFFF
+    }
+
+    /* 프로필 카드 */
+
+    .component\@profile-card {
+      margin-top: 100px;
+      margin-left: 350px;
+      display: flex;
+      align-items: stretch;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      height: 400px;
+      width: 100%;
+      box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.3);
+      will-change: transform, top, left, opacity, position, box-shadow;
+      z-index: 1;
+      line-height: 180%;
+      border-radius: 15px;
+    }
+
+    @media (min-width: 480px) {
+      .component\@profile-card {
+        width: 460px;
+      }
+    }
+
+    .component\@profile-card__blur {
+      background-color: #fff;
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+	  border-radius: 15px;
+    }
+
+    .component\@profile-card__header {
+      background: #d4e0d4;
+      width: 90px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 2;
+	  border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+    }
+
+
+    .component\@profile-card__body {
+      background: rgba(247, 247, 247, 0.6);
+      display: flex;
+      flex-grow: 1;
+      flex-shrink: 0;
+      flex-direction: column;
+      padding: 0 24px 24px 114px;
+      z-index: 1;
+	    border-radius: 15px;
+      color: #86A189;
+    }
+
+    .component\@profile-card__title {
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 2px;
+      margin-bottom: 36px;
+    }
+
+    .component\@profile-card__link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 60px;
+      width: 100%;
+      transition: ease 0.2s background;
+      will-change: background;
+      z-index: 2;
+    }
+
+    .component\@profile-card__img {
+      margin: 0 auto;
+    }
+
+    .object\@media-object {
+      margin-top: 24px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .object\@media-object:first-of-type {
+      margin-top: 0;
+    }
+
+    .object\@media-object__img {
+      margin-right: 1em;
+    }
+
+    .object\@media-object__body {
+      flex: 1;
+    }
+
+    .object\@media-object__heading {
+      margin: 0;
+    }
+
+    .object\@media-object__subheading {
+      color: #666;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-top: 0;
+      margin-bottom: 6px;
+    }
+
+    .object\@media-object__text {
+      margin: 0;
+      font-weight: 200;
+    }
+
+    .helper\@margin-top--none {
+      margin-top: 0;
+    }
+
+    #component\@profile-card-radio-2 {
+      transition: ease all 1s;
+    }
+
+    #component\@profile-card-radio-2:checked~#component\@profile-card-2 {
+      position: absolute;
+      left: 50px;
+      top: 35px;
+      transition: ease top 1s, ease opacity 1s;
+      transform: scale(1);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      perspective: 1000;
+      box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+      z-index: 0;
+      -webkit-animation: primary 0.5s ease;
+      animation: primary 0.5s ease;
+      border-radius: 15px;
+    }
+
+
+    #component\@profile-card-radio-2:checked~#component\@profile-card-1 {
+      top: 0;
+    }
+
+    #component\@profile-card-radio-1 {
+      transition: ease all 1s;
+    }
+
+    #component\@profile-card-radio-1:checked~#component\@profile-card-1 {
+      position: absolute;
+      left: 50px;
+      top: 25px;
+      transition: ease top 1s, ease opacity 1s;
+      transition-delay: 2s;
+      transform: scale(1);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      perspective: 1000;
+      box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+      z-index: 0;
+      -webkit-animation: primary 0.5s ease;
+      animation: primary 0.5s ease;
+    }
+
+    #component\@profile-card-radio-1:checked~#component\@profile-card-2 {
+      top: 0;
+    }
+
+    @-webkit-keyframes primary {
+      0% {
+        position: absolute;
+        top: 0;
+        left: 0px;
+        z-index: 2;
+      }
+
+      1% {
+        position: absolute;
+        left: 9.5px;
+        z-index: 2;
+      }
+
+      2% {
+        position: absolute;
+        left: 19px;
+        z-index: 2;
+      }
+
+      3% {
+        position: absolute;
+        left: 28.5px;
+        z-index: 2;
+      }
+
+      4% {
+        position: absolute;
+        left: 38px;
+        z-index: 2;
+      }
+
+      5% {
+        position: absolute;
+        left: 47.5px;
+        z-index: 2;
+      }
+
+      6% {
+        position: absolute;
+        left: 57px;
+        z-index: 2;
+      }
+
+      7% {
+        position: absolute;
+        left: 66.5px;
+        z-index: 2;
+      }
+
+      8% {
+        position: absolute;
+        left: 76px;
+        z-index: 2;
+      }
+
+      9% {
+        position: absolute;
+        left: 85.5px;
+        z-index: 2;
+      }
+
+      10% {
+        position: absolute;
+        left: 95px;
+        z-index: 2;
+      }
+
+      11% {
+        position: absolute;
+        left: 104.5px;
+        z-index: 2;
+      }
+
+      12% {
+        position: absolute;
+        left: 114px;
+        z-index: 2;
+      }
+
+      13% {
+        position: absolute;
+        left: 123.5px;
+        z-index: 2;
+      }
+
+      14% {
+        position: absolute;
+        left: 133px;
+        z-index: 2;
+      }
+
+      15% {
+        position: absolute;
+        left: 142.5px;
+        z-index: 2;
+      }
+
+      16% {
+        position: absolute;
+        left: 152px;
+        z-index: 2;
+      }
+
+      17% {
+        position: absolute;
+        left: 161.5px;
+        z-index: 2;
+      }
+
+      18% {
+        position: absolute;
+        left: 171px;
+        z-index: 2;
+      }
+
+      19% {
+        position: absolute;
+        left: 180.5px;
+        z-index: 2;
+      }
+
+      20% {
+        position: absolute;
+        left: 190px;
+        z-index: 2;
+      }
+
+      21% {
+        position: absolute;
+        left: 199.5px;
+        z-index: 2;
+      }
+
+      22% {
+        position: absolute;
+        left: 209px;
+        z-index: 2;
+      }
+
+      23% {
+        position: absolute;
+        left: 218.5px;
+        z-index: 2;
+      }
+
+      24% {
+        position: absolute;
+        top: 24;
+        left: 228px;
+        z-index: 2;
+      }
+
+      25% {
+        position: absolute;
+        left: 237.5px;
+        z-index: 2;
+      }
+
+      26% {
+        position: absolute;
+        left: 247px;
+        z-index: 2;
+      }
+
+      27% {
+        position: absolute;
+        left: 256.5px;
+        z-index: 2;
+      }
+
+      28% {
+        position: absolute;
+        left: 266px;
+        z-index: 2;
+      }
+
+      29% {
+        position: absolute;
+        left: 275.5px;
+        z-index: 2;
+      }
+
+      30% {
+        position: absolute;
+        left: 285px;
+        z-index: 2;
+      }
+
+      31% {
+        position: absolute;
+        left: 294.5px;
+        z-index: 2;
+      }
+
+      32% {
+        position: absolute;
+        left: 304px;
+        z-index: 2;
+      }
+
+      33% {
+        position: absolute;
+        left: 313.5px;
+        z-index: 2;
+      }
+
+      34% {
+        position: absolute;
+        left: 323px;
+        z-index: 2;
+      }
+
+      35% {
+        position: absolute;
+        left: 332.5px;
+        z-index: 2;
+      }
+
+      36% {
+        position: absolute;
+        left: 342px;
+        z-index: 2;
+      }
+
+      37% {
+        position: absolute;
+        left: 351.5px;
+        z-index: 2;
+      }
+
+      38% {
+        position: absolute;
+        left: 361px;
+        z-index: 2;
+      }
+
+      39% {
+        position: absolute;
+        left: 370.5px;
+        z-index: 2;
+      }
+
+      40% {
+        position: absolute;
+        left: 380px;
+        z-index: 2;
+      }
+
+      41% {
+        position: absolute;
+        left: 389.5px;
+        z-index: 2;
+      }
+
+      42% {
+        position: absolute;
+        left: 399px;
+        z-index: 2;
+      }
+
+      43% {
+        position: absolute;
+        left: 408.5px;
+        z-index: 2;
+      }
+
+      44% {
+        position: absolute;
+        left: 418px;
+        z-index: 2;
+      }
+
+      45% {
+        position: absolute;
+        left: 427.5px;
+        z-index: 2;
+      }
+
+      46% {
+        position: absolute;
+        left: 437px;
+        z-index: 2;
+      }
+
+      47% {
+        position: absolute;
+        left: 446.5px;
+        z-index: 2;
+      }
+
+      48% {
+        position: absolute;
+        top: 48;
+        left: 456px;
+        z-index: 2;
+      }
+
+      49% {
+        position: absolute;
+        left: 465.5px;
+        z-index: 2;
+      }
+
+      50% {
+        position: absolute;
+        left: 475px;
+        z-index: 2;
+      }
+
+      51% {
+        position: absolute;
+        left: 465px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      52% {
+        position: absolute;
+        left: 455px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      53% {
+        position: absolute;
+        left: 445px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      54% {
+        position: absolute;
+        left: 435px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      55% {
+        position: absolute;
+        left: 425px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      56% {
+        position: absolute;
+        left: 415px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      57% {
+        position: absolute;
+        left: 405px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      58% {
+        position: absolute;
+        left: 395px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      59% {
+        position: absolute;
+        left: 385px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      60% {
+        position: absolute;
+        left: 375px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      61% {
+        position: absolute;
+        left: 365px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      62% {
+        position: absolute;
+        left: 355px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      63% {
+        position: absolute;
+        left: 345px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      64% {
+        position: absolute;
+        left: 335px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      65% {
+        position: absolute;
+        left: 325px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      66% {
+        position: absolute;
+        left: 315px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      67% {
+        position: absolute;
+        left: 305px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      68% {
+        position: absolute;
+        left: 295px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      69% {
+        position: absolute;
+        left: 285px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      70% {
+        position: absolute;
+        left: 275px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      71% {
+        position: absolute;
+        left: 265px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      72% {
+        position: absolute;
+        top: 72;
+        left: 255px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      73% {
+        position: absolute;
+        left: 245px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      74% {
+        position: absolute;
+        left: 235px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      75% {
+        position: absolute;
+        left: 225px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      76% {
+        position: absolute;
+        left: 215px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      77% {
+        position: absolute;
+        left: 205px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      78% {
+        position: absolute;
+        left: 195px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      79% {
+        position: absolute;
+        left: 185px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      80% {
+        position: absolute;
+        left: 175px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      81% {
+        position: absolute;
+        left: 165px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      82% {
+        position: absolute;
+        left: 155px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      83% {
+        position: absolute;
+        left: 145px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      84% {
+        position: absolute;
+        left: 135px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      85% {
+        position: absolute;
+        left: 125px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      86% {
+        position: absolute;
+        left: 115px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      87% {
+        position: absolute;
+        left: 105px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      88% {
+        position: absolute;
+        left: 95px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      89% {
+        position: absolute;
+        left: 85px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      90% {
+        position: absolute;
+        left: 75px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      91% {
+        position: absolute;
+        left: 65px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      92% {
+        position: absolute;
+        left: 55px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      93% {
+        position: absolute;
+        left: 50;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      94% {
+        position: absolute;
+        left: 50;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      95% {
+        position: absolute;
+        left: 50;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      96% {
+        position: absolute;
+        top: 96;
+        left: 50;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      97% {
+        position: absolute;
+        left: 50;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      98% {
+        position: absolute;
+        left: 50;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      99% {
+        position: absolute;
+        left: 50;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      100% {
+        position: absolute;
+        left: 50;
+        transform: scale(1);
+        z-index: 0;
+      }
+    }
+
+    @keyframes primary {
+      0% {
+        position: absolute;
+        top: 0;
+        left: 0px;
+        z-index: 2;
+      }
+
+      1% {
+        position: absolute;
+        left: 9.5px;
+        z-index: 2;
+      }
+
+      2% {
+        position: absolute;
+        left: 19px;
+        z-index: 2;
+      }
+
+      3% {
+        position: absolute;
+        left: 28.5px;
+        z-index: 2;
+      }
+
+      4% {
+        position: absolute;
+        left: 38px;
+        z-index: 2;
+      }
+
+      5% {
+        position: absolute;
+        left: 47.5px;
+        z-index: 2;
+      }
+
+      6% {
+        position: absolute;
+        left: 57px;
+        z-index: 2;
+      }
+
+      7% {
+        position: absolute;
+        left: 66.5px;
+        z-index: 2;
+      }
+
+      8% {
+        position: absolute;
+        left: 76px;
+        z-index: 2;
+      }
+
+      9% {
+        position: absolute;
+        left: 85.5px;
+        z-index: 2;
+      }
+
+      10% {
+        position: absolute;
+        left: 95px;
+        z-index: 2;
+      }
+
+      11% {
+        position: absolute;
+        left: 104.5px;
+        z-index: 2;
+      }
+
+      12% {
+        position: absolute;
+        left: 114px;
+        z-index: 2;
+      }
+
+      13% {
+        position: absolute;
+        left: 123.5px;
+        z-index: 2;
+      }
+
+      14% {
+        position: absolute;
+        left: 133px;
+        z-index: 2;
+      }
+
+      15% {
+        position: absolute;
+        left: 142.5px;
+        z-index: 2;
+      }
+
+      16% {
+        position: absolute;
+        left: 152px;
+        z-index: 2;
+      }
+
+      17% {
+        position: absolute;
+        left: 161.5px;
+        z-index: 2;
+      }
+
+      18% {
+        position: absolute;
+        left: 171px;
+        z-index: 2;
+      }
+
+      19% {
+        position: absolute;
+        left: 180.5px;
+        z-index: 2;
+      }
+
+      20% {
+        position: absolute;
+        left: 190px;
+        z-index: 2;
+      }
+
+      21% {
+        position: absolute;
+        left: 199.5px;
+        z-index: 2;
+      }
+
+      22% {
+        position: absolute;
+        left: 209px;
+        z-index: 2;
+      }
+
+      23% {
+        position: absolute;
+        left: 218.5px;
+        z-index: 2;
+      }
+
+      24% {
+        position: absolute;
+        top: 24;
+        left: 228px;
+        z-index: 2;
+      }
+
+      25% {
+        position: absolute;
+        left: 237.5px;
+        z-index: 2;
+      }
+
+      26% {
+        position: absolute;
+        left: 247px;
+        z-index: 2;
+      }
+
+      27% {
+        position: absolute;
+        left: 256.5px;
+        z-index: 2;
+      }
+
+      28% {
+        position: absolute;
+        left: 266px;
+        z-index: 2;
+      }
+
+      29% {
+        position: absolute;
+        left: 275.5px;
+        z-index: 2;
+      }
+
+      30% {
+        position: absolute;
+        left: 285px;
+        z-index: 2;
+      }
+
+      31% {
+        position: absolute;
+        left: 294.5px;
+        z-index: 2;
+      }
+
+      32% {
+        position: absolute;
+        left: 304px;
+        z-index: 2;
+      }
+
+      33% {
+        position: absolute;
+        left: 313.5px;
+        z-index: 2;
+      }
+
+      34% {
+        position: absolute;
+        left: 323px;
+        z-index: 2;
+      }
+
+      35% {
+        position: absolute;
+        left: 332.5px;
+        z-index: 2;
+      }
+
+      36% {
+        position: absolute;
+        left: 342px;
+        z-index: 2;
+      }
+
+      37% {
+        position: absolute;
+        left: 351.5px;
+        z-index: 2;
+      }
+
+      38% {
+        position: absolute;
+        left: 361px;
+        z-index: 2;
+      }
+
+      39% {
+        position: absolute;
+        left: 370.5px;
+        z-index: 2;
+      }
+
+      40% {
+        position: absolute;
+        left: 380px;
+        z-index: 2;
+      }
+
+      41% {
+        position: absolute;
+        left: 389.5px;
+        z-index: 2;
+      }
+
+      42% {
+        position: absolute;
+        left: 399px;
+        z-index: 2;
+      }
+
+      43% {
+        position: absolute;
+        left: 408.5px;
+        z-index: 2;
+      }
+
+      44% {
+        position: absolute;
+        left: 418px;
+        z-index: 2;
+      }
+
+      45% {
+        position: absolute;
+        left: 427.5px;
+        z-index: 2;
+      }
+
+      46% {
+        position: absolute;
+        left: 437px;
+        z-index: 2;
+      }
+
+      47% {
+        position: absolute;
+        left: 446.5px;
+        z-index: 2;
+      }
+
+      48% {
+        position: absolute;
+        top: 48;
+        left: 456px;
+        z-index: 2;
+      }
+
+      49% {
+        position: absolute;
+        left: 465.5px;
+        z-index: 2;
+      }
+
+      50% {
+        position: absolute;
+        left: 475px;
+        z-index: 2;
+      }
+
+      51% {
+        position: absolute;
+        left: 465px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      52% {
+        position: absolute;
+        left: 455px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      53% {
+        position: absolute;
+        left: 445px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      54% {
+        position: absolute;
+        left: 435px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      55% {
+        position: absolute;
+        left: 425px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      56% {
+        position: absolute;
+        left: 415px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      57% {
+        position: absolute;
+        left: 405px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      58% {
+        position: absolute;
+        left: 395px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      59% {
+        position: absolute;
+        left: 385px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      60% {
+        position: absolute;
+        left: 375px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      61% {
+        position: absolute;
+        left: 365px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      62% {
+        position: absolute;
+        left: 355px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      63% {
+        position: absolute;
+        left: 345px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      64% {
+        position: absolute;
+        left: 335px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      65% {
+        position: absolute;
+        left: 325px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      66% {
+        position: absolute;
+        left: 315px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      67% {
+        position: absolute;
+        left: 305px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      68% {
+        position: absolute;
+        left: 295px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      69% {
+        position: absolute;
+        left: 285px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      70% {
+        position: absolute;
+        left: 275px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      71% {
+        position: absolute;
+        left: 265px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      72% {
+        position: absolute;
+        top: 72;
+        left: 255px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      73% {
+        position: absolute;
+        left: 245px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      74% {
+        position: absolute;
+        left: 235px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      75% {
+        position: absolute;
+        left: 225px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      76% {
+        position: absolute;
+        left: 215px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      77% {
+        position: absolute;
+        left: 205px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      78% {
+        position: absolute;
+        left: 195px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      79% {
+        position: absolute;
+        left: 185px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      80% {
+        position: absolute;
+        left: 175px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      81% {
+        position: absolute;
+        left: 165px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      82% {
+        position: absolute;
+        left: 155px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      83% {
+        position: absolute;
+        left: 145px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      84% {
+        position: absolute;
+        left: 135px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      85% {
+        position: absolute;
+        left: 125px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      86% {
+        position: absolute;
+        left: 115px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      87% {
+        position: absolute;
+        left: 105px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      88% {
+        position: absolute;
+        left: 95px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      89% {
+        position: absolute;
+        left: 85px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      90% {
+        position: absolute;
+        left: 75px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      91% {
+        position: absolute;
+        left: 65px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      92% {
+        position: absolute;
+        left: 55px;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      93% {
+        position: absolute;
+        left: 50;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      94% {
+        position: absolute;
+        left: 50;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      95% {
+        position: absolute;
+        left: 50;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      96% {
+        position: absolute;
+        top: 96;
+        left: 50;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      97% {
+        position: absolute;
+        left: 50;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      98% {
+        position: absolute;
+        left: 50;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      99% {
+        position: absolute;
+        left: 50;
+        transform: scale(1);
+        z-index: 0;
+      }
+
+      100% {
+        position: absolute;
+        left: 50;
+        transform: scale(1);
+        z-index: 0;
+      }
+    }
+
+    .is-hidden {
+      opacity: 0;
+      visibility: 0;
+      position: absolute;
+    }
+
+    .container {
+      position: relative;
+    }
+
+    body {
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      color: #303030;
+    }
+
+    /* 오디오 플레이어 */
+
+    .player {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      position: relative;
+    }
+
+    .player .info {
+      position: absolute;
+      height: 60px;
+      top: 0;
+      opacity: 0;
+      left: 10px;
+      right: 10px;
+      background-color: rgba(255, 255, 255, 0.5);
+      padding: 5px 15px 5px 110px;
+      border-radius: 15px;
+      transition: all 0.5s ease;
+    }
+
+    .player .info .artist,
+    .player .info .name {
+      display: block;
+    }
+
+    .player .info .artist {
+      color: #222;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .player .info .name {
+      color: #999;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .player .info .progress-bar {
+      background-color: #ddd;
+      height: 2px;
+      width: 100%;
+      position: relative;
+    }
+
+
+    .player .info.active {
+      top: -60px;
+      opacity: 1;
+      transition: all 0.5s ease;
+    }
+
+    .player .control-panel {
+      position: relative;
+      background-color: #fff;
+      border-radius: 15px;
+      width: 300px;
+      height: 80px;
+      z-index: 5;
+      box-shadow: 0px 20px 20px 5px rgba(132, 132, 132, 0.3);
+    }
+
+    .player .control-panel .album-art {
+      position: absolute;
+      left: 20px;
+      top: -15px;
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+      box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0);
+      transform: scale(1);
+      transition: all 0.5s ease;
+    }
+
+    .player .control-panel .album-art::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 15px;
+      height: 15px;
+      background-color: #fff;
+      border-radius: 50%;
+      z-index: 5;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+    }
+
+    .player .control-panel .album-art::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 50%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 80px;
+      background-image: url(clo.png);
+    }
+
+    .player .control-panel.active .album-art {
+      box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
+      transform: scale(1.2);
+      transition: all 0.5s ease;
+    }
+
+    .player .control-panel.active .album-art::before {
+      animation: rotation 3s infinite linear;
+      -webkit-animation: rotation 3s infinite linear;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .player .control-panel .controls {
+      color: #738A75;
+      display: flex;
+      justify-content: flex-end;
+      height: 80px;
+      padding: 0 15px;
+    }
+
+    .player .control-panel .controls .prev,
+    .player .control-panel .controls .play,
+    .player .control-panel .controls .next {
+      width: 55px;
+      height: auto;
+      border-radius: 10px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 20px;
+      margin: 5px 0;
+      background-color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      -webkit-transition: background-color 0.3s ease;
+    }
+
+    h2 {
+      color: #006B00;
+    }
+
+    h4 {
+		color: #738A75;
+		font-family: Montserrat;
+		font-size: 15px;
+	}
+
+    p {
+      color: #86A189;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="index.html" class="navbar-brand">LUCKY.ZIP
+        </a>
+      </div>
+      <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="sub1.html">LUCKY IS</a>
+          </li>
+          <li>
+            <a href="sub2.html">SYMBOL</a>
+          </li>
+          <li>
+            <a href="sub3.html">QUOTES</a>
+          </li>
+          <li>
+            <a href="sub4.html">LUCKY GUIDE</a>
+          </li>
+          <li>
+            <a href="sub5.html">SERENDIPITY</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="container">
+    <input type="radio" class="is-hidden" id="component@profile-card-radio-1" name="profile-card-radio-group" />
+
+    <section class="component@profile-card" id="component@profile-card-1">
+
+      <header class="component@profile-card__header">
+
+        <label for="component@profile-card-radio-1" class="component@profile-card__link object@sticker">
+          <img src="iconn.png" width="50px" class="object@sticker__item">
+          <div class="object@sticker component@profile-card__link">
+            <div class="object@sticker__item ion-ios-compose-outline"></div>
+          </div>
+          <div class="object@sticker component@profile-card__link">
+            <div class="object@sticker__item ion-ios-trash-outline"></div>
+          </div>
+      </header>
+
+      <article class="component@profile-card__body">
+
+        <h2 class="component@profile-card__title">LUCKY QUOTES</h2>
+
+        <div class="object@media-object">
+
+          <div class="object@media-object__body">
+            <h4 class="object@media-object__heading">Good fortune is not known until it is lost.</h4>
+            <h5 class="object@media-object__subheading"></h5>
+            <p class="object@media-object__text">‘행운이 없어질 때까지 그것이 행운이란 것을 알지 못한다’ 라는 뜻이다. 누구에게나 행운은 한 번씩 찾아오니 놓치지 말자.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="object@media-object">
+          <div class="object@media-object__body">
+            <h4 class="object@media-object__heacomes">Luck comes to those who look after it.</h4>
+            <h5 class="object@media-object__subheading"></h5>
+            <p class="object@media-object__text">‘행운은 찾는 자에게 찾아온다’ 라는 뜻이다. 가만히 있으면 아무 일도 일어나지 않듯이 행운도 쟁취하려고 노력해야 한다. 🍀
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <div class="component@profile-card__blur"></div>
+    </section>
+
+    <input type="radio" class="is-hidden" id="component@profile-card-radio-2" name="profile-card-radio-group" checked />
+    <section class="component@profile-card" id="component@profile-card-2">
+
+      <header class="component@profile-card__header">
+        <label for="component@profile-card-radio-2" class="component@profile-card__link object@sticker">
+          <img src="iconnn.png" width="50px" class="object@sticker__item">
+          <div class="object@sticker component@profile-card__link">
+            <div class="object@sticker__item ion-ios-cart-outline"></div>
+          </div>
+          <div class="object@sticker component@profile-card__link">
+            <div class="object@sticker__item ion-ios-pricetags-outline"></div>
+          </div>
+      </header>
+
+      <article class="component@profile-card__body">
+        <h2 class="component@profile-card__title">LUCKY SONG</h2>
+        <p class="helper@margin-top--none">
+
+          <div class="player">
+            <div id="info" class="info">
+              <span class="artist">Flume</span>
+              <span class="name">Say it</span>
+              <div class="progress-bar">
+                <div class="bar"></div>
+              </div>
+            </div>
+            <div id="control-panel" class="control-panel">
+              <div class="album-art"></div>
+              <div class="controls">
+                <div class="prev"> ♪ SONATA</div>
+                <div id="play" class="play"></div>
+                <div class="next"></div>
+              </div>
+            </div>　　
+          </div><br>
+          <audio src="sonata.mp3" controls></audio>
+          <br><br>
+          행운을 가져다 주는 기분 좋은 클래식 음악. 🍀
+        </p>
+      </article>
+
+      <div class="component@profile-card__blur"></div>
+    </section>
+  </div>
+  <footer>
+    <br>
+    Copyright ⓒ 2023
+    <br>
+    <br></footer>
+</body>
+
+</html>

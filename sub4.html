@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>sub 4</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <style>
+    @import 'https://fonts.googleapis.com/css?family=Montserrat|Open+Sans';
+    @font-face {
+      font-family: 'Pretendard-Regular';
+      src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    body {
+      font-family: 'Pretendard-Regular';
+      background-image: url("back.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    div.container {
+      flex: 1;
+    }
+
+    footer {
+      font-family: 'Pretendard-Regular';
+      background-color: #86A189;
+      color: #ffffff;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .navbar-brand {
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+    }
+
+    .navbar .nav {
+      font-family: 'Open Sans', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 1.2rem;
+    }
+
+    .navbar-inverse {
+      background-color: #86A189;
+    }
+
+    .navbar-inverse .navbar-nav>.active>a:hover,
+    .navbar-inverse .navbar-nav>li>a:hover,
+    .navbar-inverse .navbar-nav>li>a:focus {
+      background-color: #738A75;
+    }
+
+    .navbar-inverse .navbar-nav>.active>a,
+    .navbar-inverse .navbar-nav>.open>a,
+    .navbar-inverse .navbar-nav>.open>a,
+    .navbar-inverse .navbar-nav>.open>a:hover,
+    .navbar-inverse .navbar-nav>.open>a,
+    .navbar-inverse .navbar-nav>.open>a:hover,
+    .navbar-inverse .navbar-nav>.open>a:focus {
+      background-color: #86A189;
+    }
+
+    .dropdown-menu {
+      background-color: #006B00;
+    }
+
+    .dropdown-menu>li>a:hover,
+    .dropdown-menu>li>a:focus {
+      background-color: #738A75;
+    }
+
+    .navbar-inverse {
+      background-image: none;
+    }
+
+    .dropdown-menu>li>a:hover,
+    .dropdown-menu>li>a:focus {
+      background-image: none;
+    }
+
+    .navbar-inverse {
+      border-color: #86A189;
+    }
+
+    .navbar-inverse .navbar-brand {
+      color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-brand:hover {
+      color: #FFCC00;
+    }
+
+    .navbar-inverse .navbar-nav>li>a {
+      color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-nav>li>a:hover,
+    .navbar-inverse .navbar-nav>li>a:focus {
+      color: #FFCC00;
+    }
+
+    .navbar-inverse .navbar-nav>.active>a,
+    .navbar-inverse .navbar-nav>.open>a,
+    .navbar-inverse .navbar-nav>.open>a:hover,
+    .navbar-inverse .navbar-nav>.open>a:focus {
+      color: #FFCC00;
+    }
+
+    .navbar-inverse .navbar-nav>.active>a:hover,
+    .navbar-inverse .navbar-nav>.active>a:focus {
+      color: #FFCC00;
+    }
+
+    .dropdown-menu>li>a {
+      color: #FFFFFF;
+    }
+
+    .dropdown-menu>li>a:hover,
+    .dropdown-menu>li>a:focus {
+      color: #FFCC00;
+    }
+
+    .navbar-inverse .navbar-nav>.dropdown>a .caret {
+      border-top-color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
+      border-top-color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-nav>.dropdown>a .caret {
+      border-bottom-color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
+      border-bottom-color: #FFFFFF
+    }
+
+    /* 체크 리스트 */
+    .frame {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 400px;
+      height: 400px;
+      margin-top: -200px;
+      margin-left: -200px;
+      border-radius: 5px;
+      box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      background-color: #d4e0d4;
+      font-family: 'Pretendard-Regular';
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #727070;
+      width: 270px;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 3px 3px 8px hsla(0, 0%, 50%, 0.2);
+    }
+
+    .listBox {
+      padding: 20px;
+    }
+
+    .details {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .details .day {
+      font-weight: bold;
+      font-size: 16px;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      padding-bottom: 10px;
+      color: #006B00;
+    }
+
+    .day:hover {
+      -webkit-transform: scale(1.05);
+      -moz-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+      -o-transform: scale(1.05);
+      transform: scale(1.05);
+      transition: ease-out 0.2s;
+    }
+
+    .details .date {
+      font-family: 'Pretendard-Regular';
+      font-size: 12px;
+    }
+
+    .list {
+      font-size: 0.9em;
+    }
+
+    .list ul {
+      border-top: 1px dashed #ccc;
+      list-style-type: none;
+      padding: 10px;
+      width: 100%;
+    }
+
+    .list li {
+      display: flex;
+      align-items: center;
+      padding: 10px 0px;
+    }
+
+    .list li input {
+      display: none;
+    }
+
+    .list li input:checked+label .circle {
+      color: #c3c0c0;
+      transform: scale(1.5);
+      opacity: 0;
+    }
+
+    .list li input:checked+label .mark {
+      display: block;
+    }
+
+    .list li label {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 100;
+    }
+
+    .list li label .circle {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border: 1px solid grey;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.4s ease-out;
+    }
+
+    .list li label .mark {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      width: 12px;
+      height: 8px;
+      border-left: 3px solid green;
+      border-bottom: 3px solid green;
+      transform: rotate(-45deg);
+      display: none;
+      transition: all 0.4s ease-out 0.5s;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="index.html" class="navbar-brand">LUCKY.ZIP
+        </a>
+      </div>
+      <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="sub1.html">LUCKY IS</a>
+          </li>
+          <li>
+            <a href="sub2.html">SYMBOL</a>
+          </li>
+          <li>
+            <a href="sub3.html">QUOTES</a>
+          </li>
+          <li>
+            <a href="sub4.html">LUCKY GUIDE</a>
+          </li>
+          <li>
+            <a href="sub5.html">SERENDIPITY</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="frame">
+    <div class="center">
+      <div class="listBox">
+        <div class="details">
+          <div class="day">Lucky Guide</div>
+          <div class="date">행운을 부르는 마인드! <br> 행운은 스스로 만드는 것. 🍀</div>
+        </div>
+        <div class="list">
+          <ul>
+            <li>
+              <input type="checkbox" id="i1" />
+              <label for="i1">열심히 살았나요?<span class="circle"></span><span class="mark"></span></label>
+            </li>
+            <li>
+              <input type="checkbox" id="i2" />
+              <label for="i2">바르게 살았나요?<span class="circle"></span><span class="mark"></span></label>
+            </li>
+            <li>
+              <input type="checkbox" id="i3" />
+              <label for="i3">긍정적으로 살았나요?<span class="circle"></span><span class="mark"></span></label>
+            </li>
+            <li>
+              <input type="checkbox" id="i4" />
+              <label for="i4">감사하며 살았나요?<span class="circle"></span><span class="mark"></span></label>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <br>
+    Copyright ⓒ 2023
+    <br>
+    <br>
+  </footer>
+</body>
+
+</html>

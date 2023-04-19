@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>sub 1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <style>
+    @import 'https://fonts.googleapis.com/css?family=Montserrat|Open+Sans';
+
+    @font-face {
+      font-family: 'Pretendard-Regular';
+      src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    body {
+      background-image: url("back.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    div.container {
+      flex: 1;
+    }
+
+    footer {
+      font-family: 'Pretendard-Regular';
+      background-color: #86A189;
+      color: #ffffff;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .navbar-brand {
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+    }
+
+    .navbar .nav {
+      font-family: 'Open Sans', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 1.2rem;
+    }
+
+    .navbar-inverse {
+      background-color: #86A189;
+    }
+
+    .navbar-inverse .navbar-nav>.active>a:hover,
+    .navbar-inverse .navbar-nav>li>a:hover,
+    .navbar-inverse .navbar-nav>li>a:focus {
+      background-color: #738A75;
+    }
+
+    .navbar-inverse .navbar-nav>.active>a,
+    .navbar-inverse .navbar-nav>.open>a,
+    .navbar-inverse .navbar-nav>.open>a,
+    .navbar-inverse .navbar-nav>.open>a:hover,
+    .navbar-inverse .navbar-nav>.open>a,
+    .navbar-inverse .navbar-nav>.open>a:hover,
+    .navbar-inverse .navbar-nav>.open>a:focus {
+      background-color: #86A189;
+    }
+
+    .dropdown-menu {
+      background-color: #006B00;
+    }
+
+    .dropdown-menu>li>a:hover,
+    .dropdown-menu>li>a:focus {
+      background-color: #738A75;
+    }
+
+    .navbar-inverse {
+      background-image: none;
+    }
+
+    .dropdown-menu>li>a:hover,
+    .dropdown-menu>li>a:focus {
+      background-image: none;
+    }
+
+    .navbar-inverse {
+      border-color: #86A189;
+    }
+
+    .navbar-inverse .navbar-brand {
+      color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-brand:hover {
+      color: #FFCC00;
+    }
+
+    .navbar-inverse .navbar-nav>li>a {
+      color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-nav>li>a:hover,
+    .navbar-inverse .navbar-nav>li>a:focus {
+      color: #FFCC00;
+    }
+
+    .navbar-inverse .navbar-nav>.active>a,
+    .navbar-inverse .navbar-nav>.open>a,
+    .navbar-inverse .navbar-nav>.open>a:hover,
+    .navbar-inverse .navbar-nav>.open>a:focus {
+      color: #FFCC00;
+    }
+
+    .navbar-inverse .navbar-nav>.active>a:hover,
+    .navbar-inverse .navbar-nav>.active>a:focus {
+      color: #FFCC00;
+    }
+
+    .dropdown-menu>li>a {
+      color: #FFFFFF;
+    }
+
+    .dropdown-menu>li>a:hover,
+    .dropdown-menu>li>a:focus {
+      color: #FFCC00;
+    }
+
+    .navbar-inverse .navbar-nav>.dropdown>a .caret {
+      border-top-color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
+      border-top-color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-nav>.dropdown>a .caret {
+      border-bottom-color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
+      border-bottom-color: #FFFFFF
+    }
+
+    /* 텍스트, 언더 라인 */
+    body {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .text {
+      font-family: 'Montserrat', sans-serif;
+      position: relative;
+      margin-top: -150px;
+      color: #006B00;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      height: 100%;
+    }
+
+    p {
+      font-weight: bold;
+      font-size: 35px;
+      line-height: 50px;
+      letter-spacing: 5vw;
+      background-position: 0 center;
+      background-size: 200% auto;
+      display: inline-block;
+      background-attachment: fixed;
+      color: #006B00;
+    }
+
+    /* 마우스 오버 시 밑줄이 생기는 효과 */
+    .text__description a {
+      line-height: 30px;
+      font-size: 15px;
+      font-family: 'Pretendard-Regular';
+      text-decoration: none;
+      background-image: linear-gradient(90deg, #86A189, #86A189);
+      background-repeat: no-repeat;
+      background-size: 0% 3px;
+      background-position: 0 100%;
+      transition: background-size 600ms ease-in-out;
+      color: #006B00;
+    }
+
+    .text__description a:hover {
+      background-size: 100% 2px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="index.html" class="navbar-brand">LUCKY.ZIP
+        </a>
+      </div>
+      <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="sub1.html">LUCKY IS</a>
+          </li>
+          <li>
+            <a href="sub2.html">SYMBOL</a>
+          </li>
+          <li>
+            <a href="sub3.html">QUOTES</a>
+          </li>
+          <li>
+            <a href="sub4.html">LUCKY GUIDE</a>
+          </li>
+          <li>
+            <a href="sub5.html">SERENDIPITY</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="text">
+    <p>　
+    <span>L</span><span>U</span><span>C</span><span>K</span><span>Y</span>　</p>
+
+    <div class="text__description">
+      <b>행운</b>｜ 좋은 운수나 행복한 운수. 행운은 여러 가지 해석이 가능하지만, <br>
+      <a href="#">
+        <b>일반적으로 우연한 사건이 우리에게 긍정적인 영향을 끼치는 것을 의미한다. </b><br>
+      </a>
+      때로는 행복한 사람들이 받는 신들의 깜짝 선물로도 불린다. 🍀
+    </div>
+  </div>
+  <footer>
+    <br>
+    Copyright ⓒ 2023
+    <br>
+    <br>
+  </footer>
+</body>
+
+</html>

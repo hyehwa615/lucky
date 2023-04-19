@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>sub 5</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <style>
+    @import 'https://fonts.googleapis.com/css?family=Montserrat|Open+Sans';
+    @font-face {
+      font-family: 'Pretendard-Regular';
+      src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    body {
+      background-image: url("back.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    div.container {
+      flex: 1;
+    }
+
+    footer {
+      font-family: 'Pretendard-Regular';
+      background-color: #86A189;
+      color: #ffffff;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    .navbar-brand {
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+    }
+
+    .navbar .nav {
+      font-family: 'Open Sans', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 1.2rem;
+    }
+
+    .navbar-inverse {
+      background-color: #86A189;
+    }
+
+    .navbar-inverse .navbar-nav>.active>a:hover,
+    .navbar-inverse .navbar-nav>li>a:hover,
+    .navbar-inverse .navbar-nav>li>a:focus {
+      background-color: #cce0cd;
+    }
+
+    .navbar-inverse .navbar-nav>.active>a,
+    .navbar-inverse .navbar-nav>.open>a,
+    .navbar-inverse .navbar-nav>.open>a,
+    .navbar-inverse .navbar-nav>.open>a:hover,
+    .navbar-inverse .navbar-nav>.open>a,
+    .navbar-inverse .navbar-nav>.open>a:hover,
+    .navbar-inverse .navbar-nav>.open>a:focus {
+      background-color: #86A189;
+    }
+
+    .dropdown-menu {
+      background-color: #006B00;
+    }
+
+    .dropdown-menu>li>a:hover,
+    .dropdown-menu>li>a:focus {
+      background-color: #cce0cd;
+    }
+
+    .navbar-inverse {
+      background-image: none;
+    }
+
+    .dropdown-menu>li>a:hover,
+    .dropdown-menu>li>a:focus {
+      background-image: none;
+    }
+
+    .navbar-inverse {
+      border-color: #86A189;
+    }
+
+    .navbar-inverse .navbar-brand {
+      color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-brand:hover {
+      color: #FFCC00;
+    }
+
+    .navbar-inverse .navbar-nav>li>a {
+      color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-nav>li>a:hover,
+    .navbar-inverse .navbar-nav>li>a:focus {
+      color: #FFCC00;
+    }
+
+    .navbar-inverse .navbar-nav>.active>a,
+    .navbar-inverse .navbar-nav>.open>a,
+    .navbar-inverse .navbar-nav>.open>a:hover,
+    .navbar-inverse .navbar-nav>.open>a:focus {
+      color: #FFCC00;
+    }
+
+    .navbar-inverse .navbar-nav>.active>a:hover,
+    .navbar-inverse .navbar-nav>.active>a:focus {
+      color: #FFCC00;
+    }
+
+    .dropdown-menu>li>a {
+      color: #FFFFFF;
+    }
+
+    .dropdown-menu>li>a:hover,
+    .dropdown-menu>li>a:focus {
+      color: #FFCC00;
+    }
+
+    .navbar-inverse .navbar-nav>.dropdown>a .caret {
+      border-top-color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
+      border-top-color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-nav>.dropdown>a .caret {
+      border-bottom-color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
+      border-bottom-color: #FFFFFF
+    }
+
+    /* 영수증 태그 */
+    body {
+      margin: 0 auto;
+      padding: 0;
+      font-family: 'Pretendard-Regular';
+    }
+
+    /* 결제 완료 */
+    .paid {
+      display: none;
+      width: 300px;
+      margin: 0 auto;
+      background-color: #fff;
+      text-align: center;
+      padding-top: 25px;
+      border-radius: 0px 0px 10px 10px;
+      padding-bottom: 25px;
+      color: #00773D;
+      line-height: 30px;
+    }
+
+    .tab {
+      width: 350px;
+      margin: 0 auto;
+      height: 10px;
+      background-color: #2B2929;
+      border-radius: 50px
+    }
+
+    /* 영수증 틀 스타일 설정 */
+    .receipt {
+      text-align: center;
+      background-color: #fff;
+      padding-top: 20px;
+      width: 300px;
+      height: 530px;
+      margin: -5px auto;
+      border-radius: 5px 5px 50px 50px;
+      -moz-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .paper {
+      border-top: 1px dashed #ccc;
+      width: 96%;
+      margin: 0 auto;
+    }
+
+    .title {
+      font-family: 'Montserrat', sans-serif;
+      color: #00773D;
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 30px;
+    }
+
+    .date {
+      color: #00773D;
+      font-weight: lighter;
+      text-align: center;
+      font-size: 12px;
+      line-height: 30px;
+    }
+
+    table {
+      clear: both;
+      width: 95%;
+      margin: 0 auto;
+      color: #5B5B5B;
+      font-size: 12px;
+      margin-bottom: 20px;
+      padding-top: 20px;
+    }
+
+    .right {
+      text-align: right;
+    }
+
+    .center {
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+      padding-top: 20px;
+    }
+
+    /* 버튼 스타일 설정 */
+    input[type=button] {
+      background-color: #00874C;
+      outline: none;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+      font-weight: bold;
+      color: #fff;
+      padding-left: 30px;
+      background-repeat: no-repeat;
+      background-position: 5px center;
+      background-image: url("http://dc707.4shared.com/img/zr6_o80l/s3/13ffd4de138/cart.png");
+    }
+
+    input[type=button]:hover {
+      -moz-box-shadow: 0 10px 30px rgba(0, 255, 0, 0.3);
+      -webkit-box-shadow: 0 10px 30px rgba(0, 255, 0, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 255, 0, 0.3);
+      cursor: pointer;
+      color: #f0f0f0;
+    }
+
+    .barcode {
+      height: 20px;
+      width: 0;
+      box-shadow: 1px 0 0 1px #343434, 5px 0 0 1px #343434, 10px 0 0 1px #343434, 11px 0 0 1px #343434, 15px 0 0 1px #343434, 18px 0 0 1px #343434, 22px 0 0 1px #343434, 23px 0 0 1px #343434, 26px 0 0 1px #343434, 30px 0 0 1px #343434, 35px 0 0 1px #343434, 37px 0 0 1px #343434, 41px 0 0 1px #343434, 44px 0 0 1px #343434, 47px 0 0 1px #343434, 51px 0 0 1px #343434, 56px 0 0 1px #343434, 59px 0 0 1px #343434, 64px 0 0 1px #343434, 68px 0 0 1px #343434, 72px 0 0 1px #343434, 74px 0 0 1px #343434, 77px 0 0 1px #343434, 81px 0 0 1px #343434;
+      display: inline-block;
+      margin-right: 85px;
+    }
+
+    .sign {
+      text-align: center;
+    }
+
+    .thankyou {
+      line-height: 14px;
+      font-size: 10px;
+      margin-top: 5px;
+      color: #5B5B5B;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="index.html" class="navbar-brand">LUCKY.ZIP
+        </a>
+      </div>
+      <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="sub1.html">LUCKY IS</a>
+          </li>
+          <li>
+            <a href="sub2.html">SYMBOL</a>
+          </li>
+          <li>
+            <a href="sub3.html">QUOTES</a>
+          </li>
+          <li>
+            <a href="sub4.html">LUCKY GUIDE</a>
+          </li>
+          <li>
+            <a href="sub5.html">SERENDIPITY</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="container">
+    <div class="tab"></div>
+    <br><br>
+    <div class="paid">
+      <p>Receipt Paid successfully</p>
+    </div>
+    <div class="receipt">
+      <div class="paper">
+        <div class="title">
+          Receipt
+        </div>
+        <div class="date">Date: 20/04/2023</div>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <img src="icon.png" width="90px">
+              </td>
+            </tr>
+            <tr>
+              <td>∼행운이 도착했습니다∼</td>
+            </tr>
+            <tr>
+              <td class="center"><input type="button" value=" Lucky get!"></td>
+            </tr>
+          </tbody>
+          <br><br>
+        </table>
+
+        <div class="sign center">
+          <div class="barcode"></div>
+          <br>
+          0123456789
+          <br>
+          <div class="thankyou">
+            I wish you luck
+          </div>
+        </div>
+      </div>
+
+      <div>
+      </div>
+
+      <footer>
+        <br>
+        Copyright ⓒ 2023
+        <br>
+        <br></footer>
+</body>
+
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>sub 2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <style>
+    @import 'https://fonts.googleapis.com/css?family=Montserrat|Open+Sans';
+    @font-face {
+      font-family: 'Pretendard-Regular';
+      src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    body {
+      background-image: url("back.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    div.container {
+      flex: 1;
+    }
+
+    footer {
+      font-family: 'Pretendard-Regular';
+      background-color: #86A189;
+      color: #ffffff;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .navbar-brand {
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+    }
+
+    .navbar .nav {
+      font-family: 'Open Sans', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 1.2rem;
+    }
+
+    .navbar-inverse {
+      background-color: #86A189;
+    }
+
+    .navbar-inverse .navbar-nav>.active>a:hover,
+    .navbar-inverse .navbar-nav>li>a:hover,
+    .navbar-inverse .navbar-nav>li>a:focus {
+      background-color: #738A75;
+    }
+
+    .navbar-inverse .navbar-nav>.active>a,
+    .navbar-inverse .navbar-nav>.open>a,
+    .navbar-inverse .navbar-nav>.open>a,
+    .navbar-inverse .navbar-nav>.open>a:hover,
+    .navbar-inverse .navbar-nav>.open>a,
+    .navbar-inverse .navbar-nav>.open>a:hover,
+    .navbar-inverse .navbar-nav>.open>a:focus {
+      background-color: #86A189;
+    }
+
+    .dropdown-menu {
+      background-color: #006B00;
+    }
+
+    .dropdown-menu>li>a:hover,
+    .dropdown-menu>li>a:focus {
+      background-color: #738A75;
+    }
+
+    .navbar-inverse {
+      background-image: none;
+    }
+
+    .dropdown-menu>li>a:hover,
+    .dropdown-menu>li>a:focus {
+      background-image: none;
+    }
+
+    .navbar-inverse {
+      border-color: #86A189;
+    }
+
+    .navbar-inverse .navbar-brand {
+      color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-brand:hover {
+      color: #FFCC00;
+    }
+
+    .navbar-inverse .navbar-nav>li>a {
+      color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-nav>li>a:hover,
+    .navbar-inverse .navbar-nav>li>a:focus {
+      color: #FFCC00;
+    }
+
+    .navbar-inverse .navbar-nav>.active>a,
+    .navbar-inverse .navbar-nav>.open>a,
+    .navbar-inverse .navbar-nav>.open>a:hover,
+    .navbar-inverse .navbar-nav>.open>a:focus {
+      color: #FFCC00;
+    }
+
+    .navbar-inverse .navbar-nav>.active>a:hover,
+    .navbar-inverse .navbar-nav>.active>a:focus {
+      color: #FFCC00;
+    }
+
+    .dropdown-menu>li>a {
+      color: #FFFFFF;
+    }
+
+    .dropdown-menu>li>a:hover,
+    .dropdown-menu>li>a:focus {
+      color: #FFCC00;
+    }
+
+    .navbar-inverse .navbar-nav>.dropdown>a .caret {
+      border-top-color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
+      border-top-color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-nav>.dropdown>a .caret {
+      border-bottom-color: #FFFFFF;
+    }
+
+    .navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
+      border-bottom-color: #FFFFFF
+    }
+
+    /* 내용 태그 */
+    img {
+     border-radius: 15px;
+    }
+
+    section {
+      background: #F4F4F4;
+      padding: 40px 0;
+    }
+
+    .container {
+      position: relative;
+    }
+
+    .carousel {
+      width: 700px;
+      margin: 0 auto;
+      display: block;
+      text-align: left;
+      position: relative;
+    }
+
+    .carousel>input {
+      clip: rect(1px, 1px, 1px, 1px);
+      clip-path: inset(50%);
+      height: 1px;
+      width: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+    }
+
+    .carousel>input:nth-of-type(6):checked~.carousel__slides .carousel__slide:first-of-type {
+      margin-left: -500%;
+    }
+
+    .carousel>input:nth-of-type(5):checked~.carousel__slides .carousel__slide:first-of-type {
+      margin-left: -400%;
+    }
+
+    .carousel>input:nth-of-type(4):checked~.carousel__slides .carousel__slide:first-of-type {
+      margin-left: -300%;
+    }
+
+    .carousel>input:nth-of-type(3):checked~.carousel__slides .carousel__slide:first-of-type {
+      margin-left: -200%;
+    }
+
+    .carousel>input:nth-of-type(2):checked~.carousel__slides .carousel__slide:first-of-type {
+      margin-left: -100%;
+    }
+
+    .carousel>input:nth-of-type(1):checked~.carousel__slides .carousel__slide:first-of-type {
+      margin-left: 0%;
+    }
+
+    .carousel__slides {
+      color: #738A75;
+      position: relative;
+      z-index: 1;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+      display: flex;
+    }
+
+    .carousel__slide {
+      position: relative;
+      display: block;
+      flex: 1 0 100%;
+      overflow: hidden;
+      box-sizing: border-box;
+      white-space: normal;
+    }
+
+    .carousel__slide figure {
+      display: flex;
+      margin: 0;
+    }
+
+    .carousel__slide div {
+      position: relative;
+      width: 100%;
+    }
+
+    .carousel__slide div:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: 66.6666666667%;
+    }
+
+    .carousel__slide div>img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .carousel__slide img {
+      display: block;
+      flex: 1 1 auto;
+      object-fit: cover;
+    }
+
+    .carousel__slide figcaption {
+      align-self: flex-end;
+      padding: 20px 20px 0 20px;
+      flex: 0 0 auto;
+      width: 25%;
+      min-width: 150px;
+    }
+
+    .carousel__slide .credit {
+      color: #006B00;
+      display: block;
+    }
+
+    .carousel__slide.scrollable {
+      overflow-y: scroll;
+    }
+
+    .carousel__thumbnails {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      margin: 0 -10px;
+    }
+
+    .carousel__slides+.carousel__thumbnails {
+      margin-top: 20px;
+    }
+
+    .carousel__thumbnails li {
+      flex: 1 1 auto;
+      max-width: calc((100% / 6) - 20px);
+      margin: 0 10px;
+      transition: all 300ms ease-in-out;
+    }
+
+    .carousel__thumbnails label {
+      display: block;
+      position: relative;
+    }
+
+    .carousel__thumbnails label:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: 100%;
+    }
+
+    .carousel__thumbnails label>img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .carousel__thumbnails label:hover,
+    .carousel__thumbnails label:focus {
+      cursor: pointer;
+    }
+
+    .carousel__thumbnails label:hover img,
+    .carousel__thumbnails label:focus img {
+      box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.25);
+      transition: all 300ms ease-in-out;
+    }
+
+    .carousel__thumbnails img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="index.html" class="navbar-brand">LUCKY.ZIP
+        </a>
+      </div>
+      <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="sub1.html">LUCKY IS</a>
+          </li>
+          <li>
+            <a href="sub2.html">SYMBOL</a>
+          </li>
+          <li>
+            <a href="sub3.html">QUOTES</a>
+          </li>
+          <li>
+            <a href="sub4.html">LUCKY GUIDE</a>
+          </li>
+          <li>
+            <a href="sub5.html">SERENDIPITY</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <br><br><br><br><br><br>
+  <div class="container">
+    <div class="carousel">
+      <input type="radio" name="slides" checked="checked" id="slide-1">
+      <input type="radio" name="slides" id="slide-2">
+      <input type="radio" name="slides" id="slide-3">
+      <input type="radio" name="slides" id="slide-4">
+      <input type="radio" name="slides" id="slide-5">
+      <input type="radio" name="slides" id="slide-6">
+      <ul class="carousel__slides">
+        <li class="carousel__slide">
+          <figure>
+            <div>
+              <img src="111.jpg" alt="">
+            </div>
+            <figcaption>
+              <span class="credit"><b>네잎 클로버</b></span>
+              네잎 클로버는 네 잎을 가지는 토끼풀 속의 기형이다. <br>
+              유럽에서부터 전해지는 미신에서는 행운을 가져온다고 한다. <br>
+              대략 10,000 번에 한 번 꼴로 네잎 클로버가 핀다고 알려져 있다!
+            </figcaption>
+          </figure>
+        </li>
+        <li class="carousel__slide">
+          <figure>
+            <div>
+              <img src="444.png" alt="">
+            </div>
+            <figcaption>
+              <span class="credit"><b>오마모리</b></span>
+              전통적으로 절과 신사에서 볼 수 있는 오마모리는 무언가로부터 지켜주는 일본 부적이다. <br>
+              오마모리에는 행운의 부적처럼 지니고 있는 사람을 보호해 주는 조그만 기도문이 들어가 있다!
+            </figcaption>
+          </figure>
+        </li>
+        <li class="carousel__slide">
+          <figure>
+            <div>
+              <img src="666.jpg" alt="">
+            </div>
+            <figcaption>
+              <span class="credit"><b>복주머니</b></span>
+              색채의 천에 길한 뜻을 지닌 한자 수(壽)·복(福)·부(富)·귀(貴) 글자를 무늬처럼 
+              수놓아 만든 주머니로 한국에서 복을 불러들이는 의미를 담고 있다!
+            </figcaption>
+          </figure>
+        </li>
+        <li class="carousel__slide">
+          <figure>
+            <div>
+              <img src="222.jpg" alt="">
+            </div>
+            <figcaption>
+              <span class="credit"><b>터키석</b></span>
+              이집트에서 ‘행운의 보석’ ‘신으로부터 받은 신성한 보석’이라 불리는 터키석은 성공과 승리를 약속하는 12월의 탄생석이다!
+            </figcaption>
+          </figure>
+        </li>
+        <li class="carousel__slide">
+          <figure>
+            <div>
+              <img src="333.jpg" alt="">
+            </div>
+            <figcaption>
+              <span class="credit"><b>무당벌레</b></span>
+              프랑스에서 무당 벌레는 사람에게 행운을 가져다 줄 뿐만 아니라 그 사람의 불안과 고민도 데려가 준다고도 알려져 있다. <br>
+              행운을 운반하고 불행을 데려가 주는 익충이다!
+            </figcaption>
+          </figure>
+        </li>
+        <li class="carousel__slide">
+          <figure>
+            <div>
+              <img src="555.jpg" alt="">
+            </div>
+            <figcaption>
+              <span class="credit"><b>2 달러 지폐</b></span>
+              2 달러 지폐가 행운의 상징인 이유는, 옛날에 세계를 떠돌아다니던 사람들이 긴 여정의 외로움으로 유난히 숫자 2를 좋아했기 때문이라는 설이 있다. <br>
+              아무래도 숫자 2는 짝을 의미하기 때문이지 않을까 싶다!
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+      <ul class="carousel__thumbnails">
+        <li>
+          <label for="slide-1"><img src="111.jpg" alt=""></label>
+        </li>
+        <li>
+          <label for="slide-2"><img src="444.png" alt=""></label>
+        </li>
+        <li>
+          <label for="slide-3"><img src="666.jpg" alt=""></label>
+        </li>
+        <li>
+          <label for="slide-4"><img src="222.jpg" alt=""></label>
+        </li>
+        <li>
+          <label for="slide-5"><img src="333.jpg" alt=""></label>
+        </li>
+        <li>
+          <label for="slide-6"><img src="555.jpg" alt=""></label>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </section>
+  <footer>
+    <br>
+    Copyright ⓒ 2023
+    <br>
+    <br></footer>
+
+</body>
+
+</html>
